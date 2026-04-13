@@ -1,0 +1,22 @@
+# Dependencies
+node_modules
+npm-debug.log*
+
+# Next.js build output
+.next
+out
+
+# Environment files — never bake into image
+.env
+.env.local
+.env.*.local
+
+# Dev / editor
+.DS_Store
+*.swp
+.vscode
+.idea
+
+# Docs / scripts not needed in image
+README.md
+PLAN.md

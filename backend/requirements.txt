@@ -1,0 +1,32 @@
+# ── Production dependencies (installed in Docker) ─────────────────────────────
+
+# Analytics + error capture
+posthog==7.11.0
+
+# Content Security Policy
+django-csp==4.0
+
+# Core Django
+Django==5.2
+djangorestframework==3.16.0
+djangorestframework-simplejwt==5.4.0
+django-cors-headers==4.7.0
+
+# Database
+psycopg2-binary==2.9.11
+
+# Cache / Celery — let pip resolve kombu version compatible with celery
+redis==5.2.1
+django-redis==5.4.0
+celery==5.5.0
+django-celery-beat==2.8.1
+
+# AWS S3 media storage
+boto3==1.42.88
+django-storages==1.14.5
+
+# Environment
+python-dotenv==1.1.0
+
+# WSGI server
+gunicorn==23.0.0

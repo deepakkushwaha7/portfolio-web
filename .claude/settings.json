@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git fetch:*)",
+      "Bash(git remote:*)",
+      "Bash(npx create-next-app@latest frontend --typescript --tailwind --app --no-src-dir --import-alias=\"@/*\" --no-git --yes)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(node -e \"const l = require\\('lucide-react'\\); const names = Object.keys\\(l\\).filter\\(k => /git|linkedin|twitter|x$/i.test\\(k\\)\\); console.log\\(names\\)\")",
+      "Bash(node -e \"const l = require\\('lucide-react'\\); const names = Object.keys\\(l\\).filter\\(k => /^\\(Github|Linkedin|Twitter|LinkedinIcon|GithubIcon\\)/i.test\\(k\\)\\); console.log\\(names.slice\\(0,20\\)\\)\")",
+      "Bash(node -e \"const l = require\\('lucide-react'\\); const names = Object.keys\\(l\\).filter\\(k => !k.startsWith\\('Lucide'\\) && !k.startsWith\\('create'\\) && k.length < 12\\); console.log\\(names.filter\\(k => /^[A-Z]/.test\\(k\\)\\).slice\\(0,80\\)\\)\")",
+      "Bash(node -e \"const l = require\\('lucide-react'\\); const names = Object.keys\\(l\\).filter\\(k => !k.startsWith\\('Lucide'\\) && /^[A-Z]/.test\\(k\\)\\); const social = names.filter\\(k => /link|external|globe|share|user|profile/i.test\\(k\\)\\); console.log\\(social.slice\\(0,20\\)\\)\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/about)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/work)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/blog)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/mock-interview)",
+      "Bash(xargs kill:*)",
+      "Bash(docker system:*)",
+      "Bash(curl -s -o /dev/null -w \"nginx → frontend /: %{http_code}\\\\n\" http://localhost/)",
+      "Bash(curl -s -o /dev/null -w \"nginx → backend /api/blog/posts/: %{http_code}\\\\n\" http://localhost/api/blog/posts/)",
+      "Bash(ls -la /Users/deepakkushwaha/Documents/GitHub/portfolio-web/backend/.env* /Users/deepakkushwaha/Documents/GitHub/portfolio-web/frontend/.env*)",
+      "Bash(npm uninstall:*)",
+      "Bash(chmod +x /Users/deepakkushwaha/Documents/GitHub/portfolio-web/scripts/generate-dev-certs.sh /Users/deepakkushwaha/Documents/GitHub/portfolio-web/scripts/letsencrypt.sh)",
+      "Bash(bash scripts/generate-dev-certs.sh)",
+      "Bash(docker run:*)",
+      "Bash(curl -sk https://localhost/api/health/)",
+      "Bash(curl -sk https://localhost/)",
+      "Bash(curl -sk --insecure https://localhost/api/health/)",
+      "Bash(curl -sk --resolve deepakkushwaha.tech:443:127.0.0.1 https://deepakkushwaha.tech/health/)",
+      "Bash(curl -v http://localhost/health/)",
+      "Bash(curl -s http://127.0.0.1/health/)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\)[0]; h=d['State']['Health']; print\\('Status:', h['Status']\\); [print\\(l['Output'][:200]\\) for l in h['Log'][-3:]]\")",
+      "Bash(curl -s http://127.0.0.1/health/ -o /dev/null -w \"HTTP %{http_code}\\\\n\")",
+      "Bash(grep -n \"useFrame\\\\|getElapsedTime\" /Users/deepakkushwaha/Documents/GitHub/portfolio-web/frontend/components/three/*.tsx)",
+      "Bash(grep -n \"fallback\\\\|onError\\\\|ErrorBoundary\" /Users/deepakkushwaha/Documents/GitHub/portfolio-web/frontend/components/three/*.tsx)",
+      "Bash(open -a Docker)"
+    ],
+    "additionalDirectories": [
+      "/Users/deepakkushwaha/Documents/GitHub/portfolio-web/frontend/app/(public)/work"
+    ]
+  }
+}

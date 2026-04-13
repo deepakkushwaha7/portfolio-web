@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+/* ─── Tailwind v4 theme tokens ─────────────────────────────────────────────── */
+@theme {
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-mono: var(--font-geist-mono), monospace;
+
+  /* Colors */
+  --color-black: #0a0a0a;
+  --color-white: #f5f5f0;
+  --color-gray-100: #f0efea;
+  --color-gray-200: #e0dfd9;
+  --color-gray-300: #c8c7c0;
+  --color-gray-400: #a8a79f;
+  --color-gray-500: #88877e;
+  --color-gray-600: #68675e;
+  --color-gray-700: #48473e;
+  --color-gray-800: #28271e;
+  --color-gray-900: #18170e;
+
+  /* Background images */
+  --background-image-noise: url('/noise.svg');
+
+  /* Keyframes */
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-fade-up: fade-up 0.6s ease forwards;
+  --animate-blink: blink 1s step-end infinite;
+  --animate-slide-in-right: slide-in-right 0.4s ease forwards;
+  --animate-slide-out-right: slide-out-right 0.4s ease forwards;
+
+  @keyframes marquee {
+    0%   { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes fade-up {
+    0%   { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
+  @keyframes slide-in-right {
+    0%   { transform: translateX(100%); }
+    100% { transform: translateX(0%); }
+  }
+  @keyframes slide-out-right {
+    0%   { transform: translateX(0%); }
+    100% { transform: translateX(100%); }
+  }
+}
+
+/* ─── CSS Variables ─────────────────────────────────────────────────────────── */
+:root {
+  --font-geist-sans: 'Geist', system-ui, sans-serif;
+  --font-geist-mono: 'Geist Mono', monospace;
+  --font-playfair: 'Playfair Display', Georgia, serif;
+}
+
+/* ─── Base reset ────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: #0a0a0a;
+  color: #f5f5f0;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* scroll-behavior: smooth removed — Lenis handles smooth scrolling */
+}
+
+body {
+  background: #0a0a0a;
+  color: #f5f5f0;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ─── Custom cursor ─────────────────────────────────────────────────────────── */
+* {
+  cursor: none;
+}
+
+/* ─── Text selection ────────────────────────────────────────────────────────── */
+::selection {
+  background: #f5f5f0;
+  color: #0a0a0a;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(245, 245, 240, 0.2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 245, 240, 0.4);
+}
+
+/* ─── Noise overlay ─────────────────────────────────────────────────────────── */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url('/noise.svg');
+  opacity: 0.04;
+  z-index: 9999;
+}
+
+/* ─── Typography utilities ──────────────────────────────────────────────────── */
+.display {
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+.headline {
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+/* ─── Grain background utility ──────────────────────────────────────────────── */
+.bg-noise {
+  background-image: url('/noise.svg');
+}

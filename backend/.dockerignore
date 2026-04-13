@@ -1,0 +1,30 @@
+# Environment files — never bake into image
+.env
+.env.*
+
+# Python cache
+__pycache__
+*.py[cod]
+*.pyo
+.pytest_cache
+.mypy_cache
+.ruff_cache
+
+# Virtual env
+venv
+env
+.venv
+
+# Django dev artifacts
+db.sqlite3
+media/
+
+# Editor / OS
+.DS_Store
+*.swp
+.vscode
+.idea
+
+# Docs
+README.md
+PLAN.md
