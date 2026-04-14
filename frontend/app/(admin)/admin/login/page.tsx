@@ -93,7 +93,7 @@ export default function AdminLoginPage() {
               autoComplete="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="admin@deepakkushwaha.dev"
+              placeholder="admin@deepakkushwaha.tech"
               className="w-full bg-transparent border border-white/10 px-4 py-3 font-sans text-sm text-[#f5f5f0] placeholder:text-[#f5f5f0]/15 focus:outline-none focus:border-white/30 transition-colors"
             />
           </div>

@@ -176,13 +176,13 @@ function useTypewriter(texts: string[], speed = 55, pauseMs = 2200) {
 // ─── Hero heading word animation ─────────────────────────────────────────────
 
 const wordVariants = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 24 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.7,
-      delay: i * 0.12,
+      duration: 0.5,
+      delay: i * 0.08,
       ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
     },
   }),
@@ -217,22 +217,22 @@ export default function HomeClient() {
             AI Architect &amp; Engineering Leader
           </motion.p>
 
-          {/* Main heading */}
-          <div className="mb-4">
+          {/* Main heading — single h1 wrapping both words */}
+          <h1 className="display text-[#f5f5f0] font-serif font-black uppercase leading-none mb-4">
             {['DEEPAK', 'KUSHWAHA'].map((word, i) => (
               <div key={word} className="overflow-hidden">
-                <motion.h1
+                <motion.span
                   custom={i}
                   initial="hidden"
                   animate="visible"
                   variants={wordVariants}
-                  className="display block text-[#f5f5f0] font-serif font-black uppercase leading-none"
+                  className="block"
                 >
                   {word}
-                </motion.h1>
+                </motion.span>
               </div>
             ))}
-          </div>
+          </h1>
 
           {/* Typewriter */}
           <motion.div
@@ -275,6 +275,7 @@ export default function HomeClient() {
 
         {/* Scroll indicator */}
         <motion.div
+          aria-hidden="true"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.6, duration: 0.6 }}
@@ -335,9 +336,9 @@ export default function HomeClient() {
       {/* ── SECTION 4: SELECTED WORK ──────────────────────────────────────────── */}
       <section className="py-24 px-6 border-b border-white/10">
         <div className="max-w-7xl mx-auto">
-          <p className="font-mono text-xs text-[#f5f5f0]/40 tracking-[0.3em] uppercase mb-12">
+          <h2 className="font-mono text-xs text-[#f5f5f0]/40 tracking-[0.3em] uppercase mb-12">
             Selected Work
-          </p>
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10">
             {FEATURED_PROJECTS.map((project) => (
@@ -366,6 +367,7 @@ export default function HomeClient() {
                 </div>
                 <Link
                   href={`/work/${project.slug}`}
+                  aria-label={`View case study: ${project.company}`}
                   className="inline-flex items-center gap-2 font-mono text-xs text-[#f5f5f0] opacity-0 group-hover:opacity-100 transition-opacity duration-200 tracking-wide"
                 >
                   View Case Study <ArrowRight size={12} />
@@ -405,9 +407,9 @@ export default function HomeClient() {
       {/* ── SECTION 6: LATEST FROM BLOG ──────────────────────────────────────── */}
       <section className="py-24 px-6 border-b border-white/10">
         <div className="max-w-5xl mx-auto">
-          <p className="font-mono text-xs text-[#f5f5f0]/40 tracking-[0.3em] uppercase mb-12">
+          <h2 className="font-mono text-xs text-[#f5f5f0]/40 tracking-[0.3em] uppercase mb-12">
             Latest Thoughts
-          </p>
+          </h2>
           <div className="flex flex-col divide-y divide-white/10">
             {BLOG_POSTS.map((post) => (
               <article key={post.slug} className="group py-10 first:pt-0">
@@ -426,6 +428,7 @@ export default function HomeClient() {
                   <div className="shrink-0 md:pt-8">
                     <Link
                       href={`/blog/${post.slug}`}
+                      aria-label={`Read: ${post.title}`}
                       className="inline-flex items-center gap-2 font-mono text-xs text-[#f5f5f0]/40 hover:text-[#f5f5f0] transition-colors duration-200 tracking-wide group/link"
                     >
                       Read

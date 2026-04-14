@@ -161,7 +161,16 @@ export function CustomCursor() {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setMounted(true)
+    // Defer cursor mount until after LCP — avoids RAF loop competing with first paint
+    if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+      const id = (window as Window & { requestIdleCallback: (cb: () => void) => number })
+        .requestIdleCallback(() => setMounted(true))
+      return () => (window as Window & { cancelIdleCallback: (id: number) => void })
+        .cancelIdleCallback(id)
+    } else {
+      const t = setTimeout(() => setMounted(true), 200)
+      return () => clearTimeout(t)
+    }
   }, [])
 
   if (!mounted || typeof document === 'undefined') return null

@@ -59,6 +59,7 @@ export default function Navbar() {
           {/* Left: Monogram */}
           <Link
             href="/"
+            aria-label="Deepak Kushwaha — Home"
             className="font-serif font-bold text-xl text-[#f5f5f0] tracking-tight hover:opacity-70 transition-opacity"
           >
             DK

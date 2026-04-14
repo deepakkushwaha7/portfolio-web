@@ -37,28 +37,45 @@ export function SmoothScrollProvider({
   const rafIdRef = useRef<number | null>(null)
 
   useEffect(() => {
-    const instance = new Lenis({
-      duration:        0.9,
-      easing:          (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel:     true,
-      wheelMultiplier: 1.0,
-      touchMultiplier: 1.5,
-      autoRaf:         false,
-      ...options,
-    })
+    let instance: Lenis | null = null
+    let idleId: number | null = null
+    let tickerHandle: ReturnType<typeof setTimeout> | null = null
 
-    setLenis(instance)
+    const init = () => {
+      instance = new Lenis({
+        duration:        0.9,
+        easing:          (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel:     true,
+        wheelMultiplier: 1.0,
+        touchMultiplier: 1.5,
+        autoRaf:         false,
+        ...options,
+      })
 
-    // Simple RAF loop — no GSAP, no ScrollTrigger interference
-    function raf(time: number) {
-      instance.raf(time)
+      setLenis(instance)
+
+      function raf(time: number) {
+        instance!.raf(time)
+        rafIdRef.current = requestAnimationFrame(raf)
+      }
       rafIdRef.current = requestAnimationFrame(raf)
     }
-    rafIdRef.current = requestAnimationFrame(raf)
+
+    // Defer until after LCP — browser paints critical content first
+    if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+      idleId = (window as Window & { requestIdleCallback: (cb: () => void) => number })
+        .requestIdleCallback(init)
+    } else {
+      tickerHandle = setTimeout(init, 200)
+    }
 
     return () => {
+      if (idleId !== null && 'cancelIdleCallback' in window) {
+        (window as Window & { cancelIdleCallback: (id: number) => void }).cancelIdleCallback(idleId)
+      }
+      if (tickerHandle !== null) clearTimeout(tickerHandle)
       if (rafIdRef.current !== null) cancelAnimationFrame(rafIdRef.current)
-      instance.destroy()
+      instance?.destroy()
       setLenis(null)
     }
   }, []) // eslint-disable-line react-hooks/exhaustive-deps

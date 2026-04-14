@@ -1,16 +1,30 @@
 import React from 'react'
 import type { Metadata } from 'next'
 import AboutHero from '@/components/sections/about/AboutHero'
+import { SITE_URL } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'About',
+  title: 'About Deepak Kushwaha | AI Architect, CTO & Engineering Leader',
   description:
-    'AI Architect & Engineering Leader with 9+ years building AI-native SaaS products. Bangalore-based. Available for senior engineering and advisory roles.',
+    'Deepak Kushwaha — AI Architect, Co-founder & CTO with 9+ years at Tally Solutions, Turno, Ceodekho, and The Branding Club. Expert in RAG pipelines, LangChain, system design, and engineering leadership. Based in Bangalore, India.',
+  keywords: [
+    'Deepak Kushwaha',
+    'Deepak Kushwaha about',
+    'Deepak Kushwaha CTO',
+    'Deepak Kushwaha career',
+    'AI architect Bangalore India',
+    'engineering leader India',
+    'CTO Bangalore startup',
+    'head of engineering India',
+    'engineering manager India',
+    'AI engineer 9 years experience',
+  ],
+  alternates: { canonical: `${SITE_URL}/about` },
   openGraph: {
-    title: 'About Deepak Kushwaha | AI Architect & Engineering Leader',
+    title: 'About Deepak Kushwaha | AI Architect, CTO & Engineering Leader',
     description:
-      'AI Architect & Engineering Leader with 9+ years of experience. Based in Bangalore.',
-    url: 'https://deepakkushwaha.dev/about',
+      'AI Architect & CTO with 9+ years building AI-native SaaS. Bangalore-based. Worked at Tally, Turno, Ceodekho, and The Branding Club.',
+    url: `${SITE_URL}/about`,
   },
 }
 
@@ -198,9 +212,9 @@ export default function AboutPage() {
       {/* ── SECTION 3: CAREER TIMELINE ──────────────────────────────────────── */}
       <section className="py-24 px-6 border-b border-white/10">
         <div className="max-w-5xl mx-auto">
-          <p className="font-mono text-xs text-[#f5f5f0]/40 tracking-[0.3em] uppercase mb-16">
+          <h2 className="font-mono text-xs text-[#f5f5f0]/40 tracking-[0.3em] uppercase mb-16">
             Career Timeline
-          </p>
+          </h2>
 
           <div className="relative">
             {/* Vertical line */}
@@ -257,9 +271,9 @@ export default function AboutPage() {
       {/* ── SECTION 4: AWARDS ───────────────────────────────────────────────── */}
       <section className="py-24 px-6 border-b border-white/10">
         <div className="max-w-6xl mx-auto">
-          <p className="font-mono text-xs text-[#f5f5f0]/40 tracking-[0.3em] uppercase mb-12">
+          <h2 className="font-mono text-xs text-[#f5f5f0]/40 tracking-[0.3em] uppercase mb-12">
             Recognition
-          </p>
+          </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-px bg-white/10">
             {AWARDS.map((award) => (
@@ -287,9 +301,9 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
           {/* Education */}
           <div>
-            <p className="font-mono text-xs text-[#f5f5f0]/40 tracking-[0.3em] uppercase mb-8">
+            <h2 className="font-mono text-xs text-[#f5f5f0]/40 tracking-[0.3em] uppercase mb-8">
               Education
-            </p>
+            </h2>
             <div className="flex flex-col gap-6">
               <div className="border-l border-white/10 pl-5">
                 <p className="font-mono text-[10px] text-[#f5f5f0]/30 uppercase tracking-widest mb-1">
@@ -307,9 +321,9 @@ export default function AboutPage() {
 
           {/* Languages + Skills overview */}
           <div>
-            <p className="font-mono text-xs text-[#f5f5f0]/40 tracking-[0.3em] uppercase mb-8">
+            <h2 className="font-mono text-xs text-[#f5f5f0]/40 tracking-[0.3em] uppercase mb-8">
               Languages &amp; Communication
-            </p>
+            </h2>
             <div className="flex flex-col gap-4">
               {[
                 { lang: 'English', level: 'Professional — C2' },

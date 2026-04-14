@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import { CustomCursor } from '@/components/ui/CustomCursor'
 import { PostHogProvider } from '@/components/PostHogProvider'
+import { SITE_URL } from '@/lib/site'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -23,30 +24,37 @@ const playfairDisplay = Playfair_Display({
   display: 'swap',
 })
 
-const SITE = 'https://deepakkushwaha.tech'
-
 // ── Structured data (JSON-LD) ─────────────────────────────────────────────────
 const siteSchema = {
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type': 'Person',
-      '@id': `${SITE}/#person`,
+      '@id': `${SITE_URL}/#person`,
       name: 'Deepak Kushwaha',
-      url: SITE,
+      givenName: 'Deepak',
+      familyName: 'Kushwaha',
+      url: SITE_URL,
+      image: `${SITE_URL}/opengraph-image`,
       jobTitle: 'AI Architect & Engineering Leader',
       description:
-        'AI Architect & Engineering Leader with 9+ years building SaaS platforms. Expert in RAG pipelines, LangChain, multi-agent systems, and scaling engineering teams.',
+        'Deepak Kushwaha is an AI Architect and Engineering Leader with 9+ years building production AI systems, RAG pipelines, LangChain agents, and SaaS platforms at scale. Co-founder, CTO, and Head of Engineering based in Bangalore, India.',
+      email: 'kdeepakkushwaha@gmail.com',
       knowsAbout: [
+        'Artificial Intelligence',
         'RAG Pipelines',
         'LangChain',
         'LlamaIndex',
+        'GPT-4',
         'Multi-Agent Systems',
         'LLM Observability',
+        'Vector Databases',
+        'System Design',
+        'Engineering Leadership',
         'Next.js',
         'Django',
         'Kubernetes',
-        'System Design',
+        'SaaS Architecture',
       ],
       address: {
         '@type': 'PostalAddress',
@@ -54,24 +62,39 @@ const siteSchema = {
         addressRegion: 'Karnataka',
         addressCountry: 'IN',
       },
+      alumniOf: {
+        '@type': 'EducationalOrganization',
+        name: 'Visvesvaraya Technological University',
+        address: { '@type': 'PostalAddress', addressLocality: 'Bangalore', addressCountry: 'IN' },
+      },
       sameAs: [
         'https://www.linkedin.com/in/deepak8896484842',
         'https://github.com/deepakkushwaha7',
+        SITE_URL,
       ],
     },
     {
       '@type': 'WebSite',
-      '@id': `${SITE}/#website`,
+      '@id': `${SITE_URL}/#website`,
       name: 'Deepak Kushwaha',
-      url: SITE,
+      url: SITE_URL,
       description:
-        'AI Architect & Engineering Leader — RAG pipelines, LangChain, system design, and mock interview coaching.',
-      author: { '@id': `${SITE}/#person` },
+        'Deepak Kushwaha — AI Architect & Engineering Leader. RAG pipelines, LangChain, system design, mock interview coaching, and engineering consulting.',
+      author: { '@id': `${SITE_URL}/#person` },
       potentialAction: {
         '@type': 'SearchAction',
-        target: `${SITE}/blog?search={search_term_string}`,
+        target: `${SITE_URL}/blog?search={search_term_string}`,
         'query-input': 'required name=search_term_string',
       },
+    },
+    {
+      '@type': 'ProfilePage',
+      '@id': `${SITE_URL}/#profilepage`,
+      url: SITE_URL,
+      name: 'Deepak Kushwaha — AI Architect & Engineering Leader',
+      isPartOf: { '@id': `${SITE_URL}/#website` },
+      about: { '@id': `${SITE_URL}/#person` },
+      mainEntity: { '@id': `${SITE_URL}/#person` },
     },
   ],
 }
@@ -83,7 +106,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE),
+  metadataBase: new URL(SITE_URL),
   title: {
     template: '%s | Deepak Kushwaha',
     default: 'Deepak Kushwaha | AI Architect & Engineering Leader',
@@ -91,41 +114,39 @@ export const metadata: Metadata = {
   description:
     'AI Architect & Engineering Leader with 9+ years building SaaS platforms. Expert in RAG pipelines, LangChain, GPT-4 integrations, and scaling engineering teams. Based in Bangalore, India.',
   keywords: [
-    'AI Architect India',
-    'Engineering Leader Bangalore',
-    'RAG pipeline expert',
-    'LangChain developer',
-    'mock interview AI engineer',
     'Deepak Kushwaha',
-    'AI SaaS',
+    'Deepak Kushwaha AI architect',
+    'Deepak Kushwaha engineer',
+    'AI Architect India',
+    'AI Architect Bangalore',
+    'Engineering Leader Bangalore',
+    'CTO India',
+    'Head of Engineering India',
+    'RAG pipeline expert',
+    'LangChain developer India',
+    'mock interview AI engineer',
+    'AI SaaS architect',
+    'top AI engineer India',
+    'engineering manager India',
     'Full Stack Engineer India',
   ],
-  authors: [{ name: 'Deepak Kushwaha', url: SITE }],
+  authors: [{ name: 'Deepak Kushwaha', url: SITE_URL }],
   creator: 'Deepak Kushwaha',
-  alternates: { canonical: SITE },
+  alternates: { canonical: SITE_URL },
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: SITE,
+    url: SITE_URL,
     siteName: 'Deepak Kushwaha',
     title: 'Deepak Kushwaha | AI Architect & Engineering Leader',
     description:
       'AI Architect & Engineering Leader with 9+ years building SaaS platforms. Expert in RAG pipelines, LangChain, GPT-4 integrations.',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Deepak Kushwaha — AI Architect & Engineering Leader',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Deepak Kushwaha | AI Architect & Engineering Leader',
     description:
       'AI Architect & Engineering Leader with 9+ years building SaaS platforms.',
-    images: ['/og-image.png'],
     creator: '@deepakkushwaha',
   },
   icons: {
@@ -161,10 +182,19 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} h-full antialiased`}
     >
       <head>
+        {/* JSON-LD — Person + WebSite + ProfilePage */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }}
         />
+        {/* Entity verification — links profile to social accounts */}
+        <link rel="me" href="https://www.linkedin.com/in/deepak8896484842" />
+        <link rel="me" href="https://github.com/deepakkushwaha7" />
+        {/* Local SEO signals */}
+        <meta name="geo.region" content="IN-KA" />
+        <meta name="geo.placename" content="Bangalore, Karnataka, India" />
+        <meta name="geo.position" content="12.9716;77.5946" />
+        <meta name="ICBM" content="12.9716, 77.5946" />
       </head>
       <body className="min-h-full flex flex-col bg-[#0a0a0a] text-[#f5f5f0]">
         {/* Grain overlay — fixed, pointer-events none */}

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { notFound } from 'next/navigation'
+import { SITE_URL } from '@/lib/site'
 
 // ─── Case study data ──────────────────────────────────────────────────────────
 
@@ -313,10 +314,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${cs.company} — Case Study`,
     description: cs.tagline,
+    alternates: { canonical: `${SITE_URL}/work/${slug}` },
     openGraph: {
       title: `${cs.company} | Deepak Kushwaha`,
       description: cs.tagline,
-      url: `https://deepakkushwaha.dev/work/${slug}`,
+      url: `${SITE_URL}/work/${slug}`,
     },
   }
 }

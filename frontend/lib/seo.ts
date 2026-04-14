@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 
-const SITE_URL = 'https://deepakkushwaha.tech'
+import { SITE_URL } from '@/lib/site'
+
 const SITE_NAME = 'Deepak Kushwaha'
-const DEFAULT_OG_IMAGE = `${SITE_URL}/og-default.png`
+const DEFAULT_OG_IMAGE = `${SITE_URL}/opengraph-image`
 
 export function buildMetadata(overrides: Partial<Metadata> & {
   title: string
@@ -53,7 +54,7 @@ export function personSchema() {
     '@type': 'Person',
     name: 'Deepak Kushwaha',
     url: SITE_URL,
-    image: `${SITE_URL}/og-default.png`,
+    image: `${SITE_URL}/opengraph-image`,
     jobTitle: 'AI Architect & Engineering Leader',
     worksFor: { '@type': 'Organization', name: 'The Branding Club' },
     address: { '@type': 'PostalAddress', addressLocality: 'Bangalore', addressCountry: 'IN' },

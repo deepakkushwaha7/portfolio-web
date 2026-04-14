@@ -37,7 +37,9 @@
       "Bash(open -a Docker)",
       "Bash(python3 -c \"from django.core.management.utils import get_random_secret_key; print\\(get_random_secret_key\\(\\)\\)\")",
       "Bash(ls -la /Users/deepakkushwaha/Documents/GitHub/portfolio-web/frontend/public/og*)",
-      "Bash(find /Users/deepakkushwaha/Documents/GitHub/portfolio-web/frontend -type f \\\\\\( -name \"*.tsx\" -o -name \"*.ts\" -o -name \"*.json\" \\\\\\) -exec grep -l \"Razorpay\\\\|PhonePe\\\\|₹\\\\|payment_status\\\\|BookingOrder\" {} \\\\;)"
+      "Bash(find /Users/deepakkushwaha/Documents/GitHub/portfolio-web/frontend -type f \\\\\\( -name \"*.tsx\" -o -name \"*.ts\" -o -name \"*.json\" \\\\\\) -exec grep -l \"Razorpay\\\\|PhonePe\\\\|₹\\\\|payment_status\\\\|BookingOrder\" {} \\\\;)",
+      "Bash(npx tsc:*)",
+      "Bash(ls /Users/deepakkushwaha/Documents/GitHub/portfolio-web/frontend/node_modules/next/dist/compiled/@vercel/og/*.ttf)"
     ],
     "additionalDirectories": [
       "/Users/deepakkushwaha/Documents/GitHub/portfolio-web/frontend/app/(public)/work"

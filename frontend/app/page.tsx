@@ -4,24 +4,33 @@ import { PageTransition } from '@/components/ui/PageTransition'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import HomeClient from '@/components/sections/home/HomeClient'
+import { SITE_URL } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'Deepak Kushwaha | AI Architect & Engineering Leader | Bangalore',
+  title: 'Deepak Kushwaha | AI Architect & Engineering Leader | Bangalore, India',
   description:
-    'AI Architect & Engineering Leader with 9+ years building SaaS platforms. Expert in RAG pipelines, LangChain, GPT-4 integrations, and scaling engineering teams. Available for mock interviews and hiring.',
+    'Deepak Kushwaha — AI Architect and Engineering Leader with 9+ years building production AI systems, RAG pipelines, LangChain agents, and SaaS platforms. Co-founder & CTO based in Bangalore, India.',
   keywords: [
-    'AI Architect India',
-    'Engineering Leader Bangalore',
+    'Deepak Kushwaha',
+    'Deepak Kushwaha AI architect',
+    'Deepak Kushwaha engineering leader',
+    'AI Architect Bangalore',
+    'AI Engineer India',
+    'Engineering Leader India',
+    'Head of Engineering Bangalore',
+    'CTO India Bangalore',
     'RAG pipeline expert',
-    'LangChain developer',
+    'LangChain developer India',
+    'AI SaaS architect India',
+    'top AI engineer India',
     'mock interview AI engineer',
+    'engineering manager India',
   ],
   openGraph: {
     title: 'Deepak Kushwaha | AI Architect & Engineering Leader | Bangalore',
     description:
-      'AI Architect & Engineering Leader with 9+ years building SaaS platforms.',
-    url: 'https://deepakkushwaha.dev',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+      'AI Architect & Engineering Leader with 9+ years building AI-native SaaS platforms. Expert in RAG pipelines, LangChain, and scaling engineering teams.',
+    url: SITE_URL,
   },
 }
 

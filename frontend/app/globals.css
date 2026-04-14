@@ -83,7 +83,7 @@ body {
 }
 
 /* ─── Custom cursor ─────────────────────────────────────────────────────────── */
-* {
+html {
   cursor: none;
 }
 
@@ -106,6 +106,24 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(245, 245, 240, 0.4);
+}
+
+/* ─── Marquee ───────────────────────────────────────────────────────────────── */
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+.marquee-track:hover {
+  animation-play-state: paused !important;
 }
 
 /* ─── Noise overlay ─────────────────────────────────────────────────────────── */

@@ -100,6 +100,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
     <div className="border-b border-white/10">
       <button
         onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
         className="w-full flex items-center justify-between py-5 text-left gap-4"
       >
         <span className="font-sans text-base text-[#f5f5f0]/80">{q}</span>
@@ -326,10 +327,10 @@ export default function MockInterviewClient() {
               </div>
 
               {/* Focus areas */}
-              <div>
-                <label className="block font-mono text-[10px] text-[#f5f5f0]/30 tracking-widest uppercase mb-4">
+              <fieldset>
+                <legend className="block font-mono text-[10px] text-[#f5f5f0]/30 tracking-widest uppercase mb-4">
                   Areas to Focus (select all that apply)
-                </label>
+                </legend>
                 <div className="flex flex-wrap gap-2">
                   {FOCUS_AREAS.map((area) => (
                     <button
@@ -347,7 +348,7 @@ export default function MockInterviewClient() {
                     </button>
                   ))}
                 </div>
-              </div>
+              </fieldset>
 
               {/* Recording */}
               <label className="flex items-center gap-3 cursor-pointer group">
