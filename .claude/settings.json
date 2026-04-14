@@ -34,7 +34,8 @@
       "Bash(curl -s http://127.0.0.1/health/ -o /dev/null -w \"HTTP %{http_code}\\\\n\")",
       "Bash(grep -n \"useFrame\\\\|getElapsedTime\" /Users/deepakkushwaha/Documents/GitHub/portfolio-web/frontend/components/three/*.tsx)",
       "Bash(grep -n \"fallback\\\\|onError\\\\|ErrorBoundary\" /Users/deepakkushwaha/Documents/GitHub/portfolio-web/frontend/components/three/*.tsx)",
-      "Bash(open -a Docker)"
+      "Bash(open -a Docker)",
+      "Bash(python3 -c \"from django.core.management.utils import get_random_secret_key; print\\(get_random_secret_key\\(\\)\\)\")"
     ],
     "additionalDirectories": [
       "/Users/deepakkushwaha/Documents/GitHub/portfolio-web/frontend/app/(public)/work"

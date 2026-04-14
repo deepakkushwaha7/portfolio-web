@@ -22,6 +22,46 @@ type BlogPost = {
 
 const BLOG_POSTS: BlogPost[] = [
   {
+    slug: 'llm-observability-eval-pipelines',
+    title: 'LLM Observability: Building Eval Pipelines That Actually Catch Problems',
+    excerpt:
+      'Logging prompts and responses is not observability. Here is how to build eval pipelines that surface hallucinations, semantic drift, and cost spikes before your users do.',
+    date: 'Jan 15, 2026',
+    readTime: '10 min',
+    tags: ['LLM', 'Observability', 'Production'],
+    gradient: 'from-[#0c0c0c] to-[#1c1c1c]',
+  },
+  {
+    slug: 'django-fastapi-ai-backends',
+    title: 'Django vs FastAPI for AI Backends: A Decision Framework',
+    excerpt:
+      'After shipping AI products with both, here is the honest breakdown — when Django\'s batteries-included approach wins, when FastAPI\'s async-first design is the right call, and how to hybridize.',
+    date: 'Oct 22, 2025',
+    readTime: '8 min',
+    tags: ['Django', 'FastAPI', 'Architecture'],
+    gradient: 'from-[#1e1e1e] to-[#2e2e2e]',
+  },
+  {
+    slug: 'vector-database-comparison-2025',
+    title: 'Vector Database Showdown: Pinecone vs Weaviate vs Chroma in 2025',
+    excerpt:
+      'Benchmarked all three in production RAG workloads. The winner depends entirely on your query patterns, budget, and ops maturity — not the benchmark charts.',
+    date: 'Aug 8, 2025',
+    readTime: '9 min',
+    tags: ['Vector DB', 'RAG', 'Production'],
+    gradient: 'from-[#121212] to-[#222222]',
+  },
+  {
+    slug: 'multi-agent-systems-langgraph',
+    title: 'Multi-Agent Systems in Production: LangGraph Patterns That Actually Work',
+    excerpt:
+      'State machines for LLMs are powerful and surprisingly tricky to operationalize. Graph patterns, error-recovery designs, and human-in-the-loop integrations that held up under real load.',
+    date: 'May 19, 2025',
+    readTime: '12 min',
+    tags: ['Multi-Agent', 'LangGraph', 'LLM'],
+    gradient: 'from-[#0e0e0e] to-[#1e1e1e]',
+  },
+  {
     slug: 'building-rag-pipelines-at-scale',
     title: 'Building RAG Pipelines at Scale: Lessons from Production',
     excerpt:

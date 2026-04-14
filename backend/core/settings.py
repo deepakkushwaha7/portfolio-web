@@ -22,7 +22,10 @@ SECRET_KEY = os.environ.get(
 
 DEBUG = os.environ.get("DEBUG", "True") == "True"
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+# Supports plain hostnames and *.wildcard entries (e.g. *.up.railway.app).
+# On Railway, set ALLOWED_HOSTS=* initially, then lock down to specific domains.
+_raw_allowed = os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1")
+ALLOWED_HOSTS = [h.strip() for h in _raw_allowed.split(",") if h.strip()]
 
 # ---------------------------------------------------------------------------
 # Application definition
