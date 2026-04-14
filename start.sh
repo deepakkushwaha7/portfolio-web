@@ -9,6 +9,11 @@ cd /app/backend
 python manage.py migrate --noinput
 
 echo "──────────────────────────────────────────"
+echo "  Seeding blog posts..."
+echo "──────────────────────────────────────────"
+python manage.py seed_blog
+
+echo "──────────────────────────────────────────"
 echo "  Starting Django + Next.js via supervisord"
 echo "──────────────────────────────────────────"
 exec supervisord -n -c /etc/supervisor/supervisord.conf
