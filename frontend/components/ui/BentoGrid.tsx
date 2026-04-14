@@ -31,9 +31,9 @@ interface BentoGridProps {
 // large  : 2 col × 2 rows
 const sizeClasses: Record<BentoSize, string> = {
   small:  'col-span-1 row-span-1',
-  medium: 'col-span-1 row-span-2',
-  wide:   'col-span-2 row-span-1',
-  large:  'col-span-2 row-span-2',
+  medium: 'col-span-1 row-span-1 sm:row-span-2',
+  wide:   'col-span-1 sm:col-span-2 row-span-1',
+  large:  'col-span-1 sm:col-span-2 row-span-1 sm:row-span-2',
 }
 
 // On tablet (2-col), wide/large still max out at 2 columns:

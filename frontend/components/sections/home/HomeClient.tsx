@@ -301,11 +301,17 @@ export default function HomeClient() {
       {/* ── SECTION 3: NUMBERS ───────────────────────────────────────────────── */}
       <section className="py-24 px-6 border-b border-white/10">
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 divide-x divide-white/10">
-            {STATS.map((stat) => (
+          <div className="grid grid-cols-2 md:grid-cols-4">
+            {STATS.map((stat, index) => (
               <div
                 key={stat.label}
-                className="flex flex-col items-center px-4 sm:px-6 py-6 first:pl-0 last:pr-0"
+                className={[
+                  'flex flex-col items-center px-4 sm:px-6 py-6 border-white/10',
+                  // Right border: col-1 always, col-2 only on desktop
+                  index % 2 === 0 ? 'border-r' : 'md:border-r',
+                  // Bottom border: row-1 only on mobile
+                  index < 2 ? 'border-b md:border-b-0' : '',
+                ].join(' ')}
               >
                 <div className="font-serif font-black text-4xl sm:text-5xl md:text-6xl text-[#f5f5f0] leading-none mb-3">
                   <AnimatedCounter
@@ -320,8 +326,8 @@ export default function HomeClient() {
               </div>
             ))}
 
-            {/* 100M+ Users column */}
-            <div className="flex flex-col items-center px-4 sm:px-6 py-6 last:pr-0">
+            {/* 100M+ Users column — index 3: right col, row 2 → no right border */}
+            <div className="flex flex-col items-center px-4 sm:px-6 py-6 border-white/10">
               <div className="font-serif font-black text-4xl sm:text-5xl md:text-6xl text-[#f5f5f0] leading-none mb-3">
                 <AnimatedCounter value={100} suffix="M+" duration={2} />
               </div>
@@ -368,7 +374,7 @@ export default function HomeClient() {
                 <Link
                   href={`/work/${project.slug}`}
                   aria-label={`View case study: ${project.company}`}
-                  className="inline-flex items-center gap-2 font-mono text-xs text-[#f5f5f0] opacity-0 group-hover:opacity-100 transition-opacity duration-200 tracking-wide"
+                  className="inline-flex items-center gap-2 font-mono text-xs text-[#f5f5f0] md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-200 tracking-wide"
                 >
                   View Case Study <ArrowRight size={12} />
                 </Link>

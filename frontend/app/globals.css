@@ -82,9 +82,11 @@ body {
   overflow-x: hidden;
 }
 
-/* ─── Custom cursor ─────────────────────────────────────────────────────────── */
-html {
-  cursor: none;
+/* ─── Custom cursor — only on pointer (mouse/trackpad) devices, not touch ── */
+@media (pointer: fine) {
+  html {
+    cursor: none;
+  }
 }
 
 /* ─── Text selection ────────────────────────────────────────────────────────── */
