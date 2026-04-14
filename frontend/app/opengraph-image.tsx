@@ -81,6 +81,8 @@ export default function OgImage() {
             {/* Name */}
             <div
               style={{
+                display: 'flex',
+                flexDirection: 'column',
                 fontSize: 88,
                 fontWeight: 700,
                 color: '#f5f5f0',
@@ -89,9 +91,8 @@ export default function OgImage() {
                 marginBottom: 32,
               }}
             >
-              DEEPAK
-              <br />
-              KUSHWAHA
+              <span>DEEPAK</span>
+              <span>KUSHWAHA</span>
             </div>
 
             {/* Stats row */}
