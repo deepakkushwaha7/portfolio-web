@@ -35,7 +35,9 @@
       "Bash(grep -n \"useFrame\\\\|getElapsedTime\" /Users/deepakkushwaha/Documents/GitHub/portfolio-web/frontend/components/three/*.tsx)",
       "Bash(grep -n \"fallback\\\\|onError\\\\|ErrorBoundary\" /Users/deepakkushwaha/Documents/GitHub/portfolio-web/frontend/components/three/*.tsx)",
       "Bash(open -a Docker)",
-      "Bash(python3 -c \"from django.core.management.utils import get_random_secret_key; print\\(get_random_secret_key\\(\\)\\)\")"
+      "Bash(python3 -c \"from django.core.management.utils import get_random_secret_key; print\\(get_random_secret_key\\(\\)\\)\")",
+      "Bash(ls -la /Users/deepakkushwaha/Documents/GitHub/portfolio-web/frontend/public/og*)",
+      "Bash(find /Users/deepakkushwaha/Documents/GitHub/portfolio-web/frontend -type f \\\\\\( -name \"*.tsx\" -o -name \"*.ts\" -o -name \"*.json\" \\\\\\) -exec grep -l \"Razorpay\\\\|PhonePe\\\\|₹\\\\|payment_status\\\\|BookingOrder\" {} \\\\;)"
     ],
     "additionalDirectories": [
       "/Users/deepakkushwaha/Documents/GitHub/portfolio-web/frontend/app/(public)/work"

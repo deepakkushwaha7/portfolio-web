@@ -300,13 +300,13 @@ export default function HomeClient() {
       {/* ── SECTION 3: NUMBERS ───────────────────────────────────────────────── */}
       <section className="py-24 px-6 border-b border-white/10">
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 divide-x divide-white/10">
             {STATS.map((stat) => (
               <div
                 key={stat.label}
-                className="flex flex-col items-center px-6 py-6 first:pl-0 last:pr-0"
+                className="flex flex-col items-center px-4 sm:px-6 py-6 first:pl-0 last:pr-0"
               >
-                <div className="font-serif font-black text-5xl md:text-6xl text-[#f5f5f0] leading-none mb-3">
+                <div className="font-serif font-black text-4xl sm:text-5xl md:text-6xl text-[#f5f5f0] leading-none mb-3">
                   <AnimatedCounter
                     value={stat.value}
                     suffix={stat.suffix}
@@ -320,8 +320,8 @@ export default function HomeClient() {
             ))}
 
             {/* 100M+ Users column */}
-            <div className="flex flex-col items-center px-6 py-6 last:pr-0">
-              <div className="font-serif font-black text-5xl md:text-6xl text-[#f5f5f0] leading-none mb-3">
+            <div className="flex flex-col items-center px-4 sm:px-6 py-6 last:pr-0">
+              <div className="font-serif font-black text-4xl sm:text-5xl md:text-6xl text-[#f5f5f0] leading-none mb-3">
                 <AnimatedCounter value={100} suffix="M+" duration={2} />
               </div>
               <p className="font-mono text-xs text-[#f5f5f0]/40 tracking-widest uppercase text-center">
@@ -457,7 +457,7 @@ export default function HomeClient() {
       {/* ── SECTION 7: MOCK INTERVIEW CTA ─────────────────────────────────────── */}
       <section className="bg-[#f5f5f0] text-[#0a0a0a] py-24 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
             <div>
               <p className="font-mono text-[10px] tracking-[0.3em] text-[#0a0a0a]/40 uppercase mb-6">
                 Mock Interviews
@@ -486,10 +486,10 @@ export default function HomeClient() {
             </div>
             <div className="flex flex-col items-center md:items-end text-center md:text-right">
               <span className="font-serif font-black text-6xl sm:text-7xl md:text-8xl text-[#0a0a0a] leading-none mb-2">
-                ₹499
+                Free
               </span>
               <p className="font-mono text-sm text-[#0a0a0a]/50 mb-8 tracking-wide">
-                per session &nbsp;·&nbsp; 60 minutes &nbsp;·&nbsp; 1:1 with Deepak
+                limited slots &nbsp;·&nbsp; 60 minutes &nbsp;·&nbsp; 1:1 with Deepak
               </p>
               <MagneticButton>
                 <Link

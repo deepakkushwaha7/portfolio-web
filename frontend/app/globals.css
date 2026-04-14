@@ -137,3 +137,119 @@ body {
 .bg-noise {
   background-image: url('/noise.svg');
 }
+
+/* ─── Blog body prose ────────────────────────────────────────────────────────── */
+/* Styles TipTap-generated HTML inside the .blog-body wrapper */
+.blog-body {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(245, 245, 240, 0.72);
+}
+
+.blog-body h2 {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+  font-weight: 900;
+  color: #f5f5f0;
+  letter-spacing: -0.02em;
+  margin-top: 2.75rem;
+  margin-bottom: 0.875rem;
+  line-height: 1.2;
+}
+
+.blog-body h3 {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #f5f5f0;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.blog-body p {
+  margin-bottom: 1.25rem;
+}
+
+.blog-body ul,
+.blog-body ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.blog-body ul { list-style-type: disc; }
+.blog-body ol { list-style-type: decimal; }
+
+.blog-body li {
+  margin-bottom: 0.5rem;
+}
+
+.blog-body li::marker {
+  color: rgba(245, 245, 240, 0.25);
+}
+
+.blog-body strong {
+  font-weight: 600;
+  color: #f5f5f0;
+}
+
+.blog-body em {
+  font-style: italic;
+  color: rgba(245, 245, 240, 0.85);
+}
+
+.blog-body a {
+  color: #f5f5f0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(245, 245, 240, 0.3);
+  transition: text-decoration-color 0.2s;
+}
+
+.blog-body a:hover {
+  text-decoration-color: rgba(245, 245, 240, 0.75);
+}
+
+.blog-body code {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.84em;
+  background: rgba(245, 245, 240, 0.07);
+  border: 1px solid rgba(245, 245, 240, 0.08);
+  padding: 0.15em 0.4em;
+  border-radius: 2px;
+  color: rgba(245, 245, 240, 0.9);
+}
+
+.blog-body pre {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.8rem;
+  background: rgba(245, 245, 240, 0.04);
+  border: 1px solid rgba(245, 245, 240, 0.08);
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  line-height: 1.65;
+}
+
+.blog-body pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  color: rgba(245, 245, 240, 0.8);
+}
+
+.blog-body blockquote {
+  border-left: 2px solid rgba(245, 245, 240, 0.2);
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  color: rgba(245, 245, 240, 0.45);
+  font-style: italic;
+}
+
+.blog-body hr {
+  border: none;
+  border-top: 1px solid rgba(245, 245, 240, 0.08);
+  margin: 2.5rem 0;
+}

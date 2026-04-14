@@ -109,7 +109,7 @@ export default function Navbar() {
               aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen((v) => !v)}
-              className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5 group"
+              className="md:hidden flex flex-col justify-center items-center w-11 h-11 gap-1.5 group -mr-1.5"
             >
               <span
                 className={cn(

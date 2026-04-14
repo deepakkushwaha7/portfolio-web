@@ -119,9 +119,9 @@ export function serviceSchema() {
       '60-minute 1:1 mock interview covering System Design, DSA, AI/ML, and Behavioral rounds with written feedback.',
     offers: {
       '@type': 'Offer',
-      price: '499',
+      price: '0',
       priceCurrency: 'INR',
-      availability: 'https://schema.org/InStock',
+      availability: 'https://schema.org/LimitedAvailability',
       url: `${SITE_URL}/mock-interview`,
     },
     areaServed: 'IN',

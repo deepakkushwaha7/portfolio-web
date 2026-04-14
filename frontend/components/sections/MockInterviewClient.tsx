@@ -1,8 +1,5 @@
 'use client'
 
-// TODO: Replace booking form submit with actual API call to Django backend at /api/bookings/create/
-// TODO: Integrate payment gateway (Razorpay) for ₹499 booking payment flow
-
 import React, { useState } from 'react'
 import { clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
@@ -39,8 +36,8 @@ const WHAT_YOU_GET = [
 
 const HOW_IT_WORKS = [
   { step: '01', title: 'Choose Your Slot', description: 'Pick an available date and time that works for you.' },
-  { step: '02', title: 'Book & Pay', description: 'Secure your slot with a ₹499 payment via Razorpay.' },
-  { step: '03', title: 'Get Confirmation', description: 'Receive calendar invite + Google Meet link within minutes.' },
+  { step: '02', title: 'Fill the Form', description: 'Tell me your current role, target role, and areas to focus on.' },
+  { step: '03', title: 'Get Confirmation', description: 'Receive a calendar invite + Google Meet link within minutes.' },
   { step: '04', title: 'Your Interview', description: '60-minute 1:1 session, live problem-solving, real feedback.' },
 ]
 
@@ -69,7 +66,7 @@ const FAQ = [
   },
   {
     q: 'What happens if I need to reschedule?',
-    a: 'You can reschedule up to 24 hours before the session at no extra charge. Cancellations within 24 hours are non-refundable.',
+    a: 'You can reschedule up to 24 hours before the session. Just reply to the confirmation email and we will find a new slot.',
   },
   {
     q: 'What platform will we use?',
@@ -150,9 +147,8 @@ export default function MockInterviewClient() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setSubmitting(true)
-    // TODO: POST to /api/bookings/create/ with auth + trigger Razorpay payment
-    console.log('Booking data:', formData)
-    await new Promise((r) => setTimeout(r, 1000))
+    // TODO: POST booking to /api/bookings/create/
+    await new Promise((r) => setTimeout(r, 800))
     setSubmitting(false)
     setSubmitted(true)
   }
@@ -166,7 +162,7 @@ export default function MockInterviewClient() {
       <section className="pt-32 pb-20 px-6 border-b border-white/10">
         <div className="max-w-5xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.3em] text-[#0a0a0a] bg-[#f5f5f0] px-4 py-2 uppercase mb-8">
-            ₹499 per session
+            Free — Limited Slots
           </div>
           <h1 className="display font-serif font-black text-[#f5f5f0] uppercase leading-none mb-6">
             1:1 Mock Interview
@@ -234,8 +230,8 @@ export default function MockInterviewClient() {
               <CheckCircle2 size={40} className="text-[#f5f5f0]/40 mx-auto mb-6" strokeWidth={1} />
               <h3 className="font-serif text-2xl font-bold text-[#f5f5f0] mb-3">Booking Received</h3>
               <p className="font-sans text-sm text-[#f5f5f0]/40 leading-relaxed max-w-sm mx-auto">
-                Payment link sent to your email. Once confirmed you&rsquo;ll receive
-                a calendar invite within 15 minutes.
+                You&rsquo;ll receive a calendar invite and Google Meet link at your email
+                within 15 minutes.
               </p>
             </div>
           ) : (
@@ -245,14 +241,14 @@ export default function MockInterviewClient() {
                 <label className="block font-mono text-xs text-[#f5f5f0]/40 tracking-widest uppercase mb-4">
                   Available Dates (April 2026)
                 </label>
-                <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2">
                   {AVAILABLE_DATES.map(({ date }) => (
                     <button
                       key={date}
                       type="button"
                       onClick={() => setFormData((p) => ({ ...p, selectedDate: date, selectedSlot: '' }))}
                       className={cn(
-                        'py-3 font-mono text-xs tracking-wide transition-all duration-200 border',
+                        'py-3.5 sm:py-3 font-mono text-xs tracking-wide transition-all duration-200 border',
                         formData.selectedDate === date
                           ? 'bg-[#f5f5f0] text-[#0a0a0a] border-[#f5f5f0]'
                           : 'text-[#f5f5f0]/50 border-white/10 hover:border-white/30'
@@ -378,7 +374,7 @@ export default function MockInterviewClient() {
                     : 'bg-[#f5f5f0] text-[#0a0a0a] hover:bg-white'
                 )}
               >
-                {submitting ? 'Processing...' : <> Book &amp; Pay ₹499 <ArrowRight size={14} /> </>}
+                {submitting ? 'Processing...' : <> Book My Free Session <ArrowRight size={14} /></>}
               </button>
             </form>
           )}
