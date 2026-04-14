@@ -1,0 +1,32 @@
+# Railway config for single-container deployment (Django + Next.js together).
+# Leave "Root Directory" blank — Railway builds from the repo root Dockerfile.
+#
+# Required add-ons in Railway dashboard:
+#   PostgreSQL plugin  →  DATABASE_URL auto-injected
+#   Redis plugin       →  REDIS_URL auto-injected
+#
+# Env vars to set on the service:
+#   DJANGO_SECRET_KEY       (required — generate a new one)
+#   DEBUG                   False
+#   ALLOWED_HOSTS           *   (or lock down to your Railway domain later)
+#   CORS_ALLOWED_ORIGINS    https://<your-railway-url>.up.railway.app
+#   REVALIDATION_SECRET     (generate: openssl rand -hex 32)
+#   DEFAULT_FROM_EMAIL      noreply@deepakkushwaha.tech
+#   ADMIN_EMAIL             kdeepakkushwaha@gmail.com
+#   SENDGRID_API_KEY        (optional)
+#   PHONEPE_ENV             UAT
+#   NEXT_PUBLIC_PHONEPE_ENV UAT
+#   POSTHOG_HOST            https://app.posthog.com
+#   DJANGO_LOG_LEVEL        INFO
+
+[build]
+builder = "dockerfile"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+# Railway injects $PORT; Next.js standalone reads it automatically.
+# Gunicorn is internal on :8000 and is not exposed.
+healthcheckPath = "/"
+healthcheckTimeout = 300
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3
