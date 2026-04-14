@@ -12,15 +12,23 @@ export const revalidate = 3600
 type SitemapEntry = MetadataRoute.Sitemap[number]
 
 async function fetchJson<T>(path: string): Promise<T> {
-  const res = await fetch(`${getBackendBaseUrl()}${path}`, {
-    next: { revalidate },
-  })
+  const controller = new AbortController()
+  const timer = setTimeout(() => controller.abort(), 5000)
 
-  if (!res.ok) {
-    throw new Error(`Failed sitemap fetch for ${path}: ${res.status}`)
+  try {
+    const res = await fetch(`${getBackendBaseUrl()}${path}`, {
+      next: { revalidate },
+      signal: controller.signal,
+    })
+
+    if (!res.ok) {
+      throw new Error(`Failed sitemap fetch for ${path}: ${res.status}`)
+    }
+
+    return res.json() as Promise<T>
+  } finally {
+    clearTimeout(timer)
   }
-
-  return res.json() as Promise<T>
 }
 
 function staticEntries(): SitemapEntry[] {
