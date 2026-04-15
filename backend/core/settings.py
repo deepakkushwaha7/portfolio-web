@@ -311,15 +311,24 @@ POSTHOG_HOST = os.environ.get("POSTHOG_HOST", "https://app.posthog.com")
 # ---------------------------------------------------------------------------
 # Security (production hardening — only active when DEBUG=False)
 # ---------------------------------------------------------------------------
+# Django always runs behind Railway's SSL terminator + Next.js proxy.
+# Never redirect HTTP→HTTPS internally — Railway enforces HTTPS upstream.
+# This must be unconditional (not inside if not DEBUG) to prevent redirect loops
+# when Next.js proxies /django-admin/* to Django over internal HTTP.
+SECURE_SSL_REDIRECT = False
+USE_X_FORWARDED_HOST = True
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
+# Required for Django 4+ CSRF validation when behind a reverse proxy
+CSRF_TRUSTED_ORIGINS = [
+    "https://deepakkushwaha.tech",
+    "https://*.up.railway.app",
+]
+
 if not DEBUG:
     SECURE_HSTS_SECONDS = 31536000
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
-    # Django sits behind Next.js (and Railway's SSL terminator) — trust the
-    # X-Forwarded-Proto header so Django knows the original request was HTTPS.
-    # This prevents the redirect loop: Django HTTP → HTTPS → Next.js → Django HTTP → …
-    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-    SECURE_SSL_REDIRECT = False  # Railway + Next.js already enforce HTTPS upstream
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
     SECURE_BROWSER_XSS_FILTER = True

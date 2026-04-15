@@ -530,7 +530,7 @@ export default function HomeClient() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <MagneticButton>
               <a
-                href="/Deepak-Kushwaha-Resume.pdf"
+                href="/Deepak2026resume.pdf"
                 download
                 className="inline-flex items-center px-8 py-3.5 border border-[#f5f5f0]/30 text-[#f5f5f0] font-sans font-medium text-sm tracking-wide hover:border-[#f5f5f0]/70 hover:bg-[#f5f5f0]/5 transition-all duration-200"
               >
