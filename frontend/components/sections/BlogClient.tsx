@@ -144,70 +144,76 @@ export default function BlogClient() {
   return (
     <>
       {/* Page header */}
-      <section className="pt-32 pb-12 px-6 border-b border-white/10">
-        <div className="max-w-4xl mx-auto">
-          <p className="font-mono text-xs tracking-[0.3em] text-[#f5f5f0]/40 uppercase mb-4">
-            Writing
-          </p>
-          <h1 className="display font-serif font-black text-[#f5f5f0] uppercase mb-6">
-            Blog
-          </h1>
-          <p className="font-sans text-base text-[#f5f5f0]/40 max-w-lg leading-relaxed">
-            Long-form thinking on AI engineering, system design, and building
-            products people actually use.
-          </p>
+      <section className="pt-32 pb-16 px-6 border-b border-white/10">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl">
+            <p className="font-mono text-xs tracking-[0.3em] text-[#f5f5f0]/40 uppercase mb-4">
+              Writing
+            </p>
+            <h1 className="display font-serif font-black text-[#f5f5f0] uppercase mb-6">
+              Blog
+            </h1>
+            <p className="font-sans text-base text-[#f5f5f0]/40 max-w-lg leading-relaxed">
+              Long-form thinking on AI engineering, system design, and building
+              products people actually use.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Search + filters */}
       <section className="sticky top-16 z-30 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/10 py-4 px-6">
-        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row gap-4">
-          <div className="relative flex-1">
-            <Search
-              size={13}
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-[#f5f5f0]/30 pointer-events-none"
-            />
-            <input
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search posts..."
-              className="w-full bg-transparent border border-white/10 pl-9 pr-4 py-2 font-mono text-xs text-[#f5f5f0] placeholder:text-[#f5f5f0]/25 focus:outline-none focus:border-white/30 transition-colors"
-            />
-          </div>
-          <div className="flex items-center gap-2 overflow-x-auto shrink-0">
-            <button
-              onClick={() => setActiveTag(null)}
-              className={cn(
-                'shrink-0 px-3 py-1.5 font-mono text-[10px] tracking-widest uppercase transition-all duration-200',
-                activeTag === null
-                  ? 'bg-[#f5f5f0] text-[#0a0a0a]'
-                  : 'text-[#f5f5f0]/40 border border-white/10 hover:border-white/30 hover:text-[#f5f5f0]'
-              )}
-            >
-              All
-            </button>
-            {ALL_TAGS.map((tag) => (
-              <button
-                key={tag}
-                onClick={() => setActiveTag(activeTag === tag ? null : tag)}
-                className={cn(
-                  'shrink-0 px-3 py-1.5 font-mono text-[10px] tracking-widest uppercase transition-all duration-200',
-                  activeTag === tag
-                    ? 'bg-[#f5f5f0] text-[#0a0a0a]'
-                    : 'text-[#f5f5f0]/40 border border-white/10 hover:border-white/30 hover:text-[#f5f5f0]'
-                )}
-              >
-                {tag}
-              </button>
-            ))}
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col gap-4 xl:flex-row xl:items-start">
+            <div className="relative w-full xl:max-w-sm xl:shrink-0">
+              <Search
+                size={13}
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-[#f5f5f0]/30 pointer-events-none"
+              />
+              <input
+                type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search posts..."
+                className="w-full bg-transparent border border-white/10 pl-9 pr-4 py-2 font-mono text-xs text-[#f5f5f0] placeholder:text-[#f5f5f0]/25 focus:outline-none focus:border-white/30 transition-colors"
+              />
+            </div>
+            <div className="min-w-0 xl:flex-1">
+              <div className="flex items-center gap-2 overflow-x-auto pb-1 md:flex-wrap md:overflow-visible md:pb-0">
+                <button
+                  onClick={() => setActiveTag(null)}
+                  className={cn(
+                    'shrink-0 px-3 py-1.5 font-mono text-[10px] tracking-widest uppercase transition-all duration-200',
+                    activeTag === null
+                      ? 'bg-[#f5f5f0] text-[#0a0a0a]'
+                      : 'text-[#f5f5f0]/40 border border-white/10 hover:border-white/30 hover:text-[#f5f5f0]'
+                  )}
+                >
+                  All
+                </button>
+                {ALL_TAGS.map((tag) => (
+                  <button
+                    key={tag}
+                    onClick={() => setActiveTag(activeTag === tag ? null : tag)}
+                    className={cn(
+                      'shrink-0 px-3 py-1.5 font-mono text-[10px] tracking-widest uppercase transition-all duration-200',
+                      activeTag === tag
+                        ? 'bg-[#f5f5f0] text-[#0a0a0a]'
+                        : 'text-[#f5f5f0]/40 border border-white/10 hover:border-white/30 hover:text-[#f5f5f0]'
+                    )}
+                  >
+                    {tag}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Post grid */}
       <section className="py-16 px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           {filtered.length === 0 ? (
             <div className="text-center py-24">
               <p className="font-mono text-sm text-[#f5f5f0]/30 tracking-wide">
@@ -215,7 +221,7 @@ export default function BlogClient() {
               </p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/10">
+            <div className="grid max-w-5xl grid-cols-1 sm:grid-cols-2 gap-px bg-white/10">
               {filtered.map((post) => (
                 <Link
                   key={post.slug}
