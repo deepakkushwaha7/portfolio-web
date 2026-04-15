@@ -14,6 +14,14 @@ const nextConfig: NextConfig = {
         source: '/api/:path*',
         destination: `${djangoBase}/api/:path*`,
       },
+      {
+        source: '/django-admin/:path*',
+        destination: `${djangoBase}/django-admin/:path*`,
+      },
+      {
+        source: '/health/',
+        destination: `${djangoBase}/health/`,
+      },
     ]
   },
 
