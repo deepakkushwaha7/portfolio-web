@@ -315,7 +315,11 @@ if not DEBUG:
     SECURE_HSTS_SECONDS = 31536000
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
-    SECURE_SSL_REDIRECT = True
+    # Django sits behind Next.js (and Railway's SSL terminator) — trust the
+    # X-Forwarded-Proto header so Django knows the original request was HTTPS.
+    # This prevents the redirect loop: Django HTTP → HTTPS → Next.js → Django HTTP → …
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+    SECURE_SSL_REDIRECT = False  # Railway + Next.js already enforce HTTPS upstream
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
     SECURE_BROWSER_XSS_FILTER = True
