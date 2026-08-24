@@ -27,6 +27,18 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
+    slug: 'metis-labs',
+    company: 'Metis Labs',
+    role: 'Chief Technology Officer',
+    dateRange: 'Jul 2026 – Present',
+    tagline:
+      'Software, opened. Utrecht-based custom software studio — business process automation, AI features, and MVPs built with live repo access and ownership transferred to the client.',
+    tech: ['LLM Orchestration', 'RAG', 'Python', 'TypeScript', 'Next.js', 'Kubernetes'],
+    initial: 'M',
+    gradient: 'from-[#1a1a1a] to-[#2f2f2f]',
+    tags: ['All', 'Consulting', 'AI Products'],
+  },
+  {
     slug: 'the-branding-club',
     company: 'The Branding Club',
     role: 'Lead AI Engineer & Founding Architect',

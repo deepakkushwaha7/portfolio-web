@@ -14,6 +14,7 @@ type CaseStudy = {
   role: string
   dateRange: string
   category: string
+  companyUrl?: string
   tagline: string
   overview: string
   challenge: string
@@ -25,6 +26,41 @@ type CaseStudy = {
 }
 
 const CASE_STUDIES: Record<string, CaseStudy> = {
+  'metis-labs': {
+    slug: 'metis-labs',
+    company: 'Metis Labs',
+    role: 'Chief Technology Officer',
+    dateRange: 'Jul 2026 – Present',
+    category: 'Custom Software · AI',
+    companyUrl: 'https://metislabs.eu/',
+    tagline: 'Software, opened. Custom software, business process automation, and AI features — built in the open, with ownership transferred to the client.',
+    overview:
+      'Metis Labs is a Utrecht-based custom software studio operating on a simple premise: software, opened. Clients get live repo access, weekly working demos, and decisions explained in plain language from day one — the opposite of the black-box agency model. I joined as Chief Technology Officer in July 2026 to own technology strategy and engineering execution across the studio: architecture, delivery process, technical hiring, and the AI capability that runs through client engagements.',
+    challenge:
+      'A studio model puts pressure on two things at once: every engagement is a different domain with a different stack, and every client is watching the repo while you build. That rules out the usual agency shortcuts — no throwaway prototypes handed over as production code, no architecture decisions that only make sense to the people who made them. The technical foundation has to be genuinely portable, because ownership transfer is the stated end state of every project, not an afterthought at the end of the invoice.',
+    whatIBuilt: [
+      'Own technology strategy and engineering execution end-to-end — architecture review, platform roadmap, delivery process, and technical hiring across the studio.',
+      'Lead the AI capability: LLM orchestration, RAG pipelines, evaluation harnesses, and observability, applied as product features inside client engagements rather than as standalone demos.',
+      'Codified the scope-iterate-transfer methodology into repeatable engineering practice — iteration planning, weekly working demos, and handover standards that make ownership transfer a non-event.',
+      'Set technical standards and review culture: architecture decision records written in plain language, since clients read them alongside the team.',
+      'Drive business process automation engagements — mapping measurable operational problems to systems, rather than shipping feature lists.',
+    ],
+    stack: [
+      { group: 'AI / LLM', items: ['LLM Orchestration', 'RAG Pipelines', 'Evals', 'Observability'] },
+      { group: 'Backend', items: ['Python', 'Django', 'FastAPI', 'PostgreSQL'] },
+      { group: 'Frontend', items: ['TypeScript', 'Next.js', 'React'] },
+      { group: 'Infrastructure', items: ['Docker', 'Kubernetes', 'CI/CD', 'Cloud'] },
+    ],
+    metrics: [
+      { value: 'Jul 2026', label: 'Appointed CTO' },
+      { value: 'Utrecht', label: 'Netherlands · Remote' },
+      { value: 'Day 1', label: 'Live repo access for clients' },
+      { value: 'Weekly', label: 'Working demos shipped' },
+    ],
+    nextSlug: 'the-branding-club',
+    nextCompany: 'The Branding Club',
+  },
+
   'the-branding-club': {
     slug: 'the-branding-club',
     company: 'The Branding Club',
@@ -292,8 +328,8 @@ const CASE_STUDIES: Record<string, CaseStudy> = {
       { value: '91%', label: 'GPU cost reduction' },
       { value: 'Profitable', label: 'Bootstrapped, no funding' },
     ],
-    nextSlug: 'the-branding-club',
-    nextCompany: 'The Branding Club',
+    nextSlug: 'metis-labs',
+    nextCompany: 'Metis Labs',
   },
 }
 
@@ -361,6 +397,18 @@ export default async function WorkSlugPage({ params }: Props) {
           <p className="font-sans text-base md:text-lg text-[#f5f5f0]/50 leading-relaxed max-w-2xl mb-2">
             {cs.role}
           </p>
+
+          {cs.companyUrl && (
+            <a
+              href={cs.companyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-mono text-xs text-[#f5f5f0]/40 hover:text-[#f5f5f0] transition-colors tracking-wide"
+            >
+              {cs.companyUrl.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+              <ArrowRight size={12} />
+            </a>
+          )}
         </div>
       </div>
 

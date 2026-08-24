@@ -3,6 +3,7 @@ export const SITE_URL = 'https://deepakkushwaha.tech'
 export const STATIC_PUBLIC_PATHS = ['/', '/about', '/blog', '/hire', '/mock-interview', '/work']
 
 export const WORK_CASE_STUDY_SLUGS = [
+  'metis-labs',
   'the-branding-club',
   'ceodekho',
   'khaatadekho',

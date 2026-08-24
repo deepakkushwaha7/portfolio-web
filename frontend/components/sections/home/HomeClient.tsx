@@ -48,6 +48,15 @@ const STATS = [
 
 const FEATURED_PROJECTS = [
   {
+    slug: 'metis-labs',
+    category: 'CUSTOM SOFTWARE · AI',
+    company: 'Metis Labs',
+    tagline:
+      'Software, opened. Utrecht-based custom software studio — automation, AI features, and MVPs built in the open.',
+    tech: ['LLM Orchestration', 'RAG', 'Python', 'TypeScript', 'Kubernetes'],
+    dateRange: 'Jul 2026 – Present',
+  },
+  {
     slug: 'the-branding-club',
     category: 'AI PRODUCT',
     company: 'The Branding Club',

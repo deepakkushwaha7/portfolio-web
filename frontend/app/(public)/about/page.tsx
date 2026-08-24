@@ -43,7 +43,7 @@ const TIMELINE: TimelineEntry[] = [
     company: 'Metis Labs',
     role: 'Chief Technology Officer',
     dateRange: 'Jul 2026 – Present',
-    location: 'Europe (Remote)',
+    location: 'Utrecht, Netherlands (Remote)',
     bullets: [
       'Own technology strategy and engineering execution end-to-end — architecture, platform roadmap, technical hiring, and delivery.',
       'Lead the design of AI-native product infrastructure: LLM orchestration, RAG pipelines, evaluation harnesses, and observability.',
