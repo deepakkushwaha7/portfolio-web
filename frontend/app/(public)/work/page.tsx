@@ -3,7 +3,7 @@ import WorkClient from '@/components/sections/WorkClient'
 import { SITE_URL } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'Work & Case Studies | Deepak Kushwaha — AI Architect',
+  title: 'Work & Case Studies | Deepak Kushwaha — CTO & AI Architect',
   description:
     'Case studies and portfolio of AI products, RAG pipelines, SaaS platforms, and engineering consulting by Deepak Kushwaha — 9+ years, 20+ shipped products across India, Europe, and the US.',
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: `${SITE_URL}/work` },
   openGraph: {
-    title: 'Work & Case Studies | Deepak Kushwaha — AI Architect',
+    title: 'Work & Case Studies | Deepak Kushwaha — CTO & AI Architect',
     description:
       '20+ shipped products across AI, SaaS, and marketplaces. Case studies from Turno, Tally, The Branding Club, and more.',
     url: `${SITE_URL}/work`,

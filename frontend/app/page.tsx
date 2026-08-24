@@ -7,11 +7,13 @@ import HomeClient from '@/components/sections/home/HomeClient'
 import { SITE_URL } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'Deepak Kushwaha | AI Architect & Engineering Leader | Bangalore, India',
+  title: 'Deepak Kushwaha | CTO & AI Architect | Bangalore, India',
   description:
-    'Deepak Kushwaha — AI Architect and Engineering Leader with 9+ years building production AI systems, RAG pipelines, LangChain agents, and SaaS platforms. Co-founder & CTO based in Bangalore, India.',
+    'Deepak Kushwaha — CTO at Metis Labs and AI Architect with 9+ years building production AI systems, RAG pipelines, LangChain agents, and SaaS platforms. Based in Bangalore, India.',
   keywords: [
     'Deepak Kushwaha',
+    'Deepak Kushwaha CTO',
+    'Deepak Kushwaha Metis Labs',
     'Deepak Kushwaha AI architect',
     'Deepak Kushwaha engineering leader',
     'AI Architect Bangalore',
@@ -27,9 +29,9 @@ export const metadata: Metadata = {
     'engineering manager India',
   ],
   openGraph: {
-    title: 'Deepak Kushwaha | AI Architect & Engineering Leader | Bangalore',
+    title: 'Deepak Kushwaha | CTO & AI Architect | Bangalore',
     description:
-      'AI Architect & Engineering Leader with 9+ years building AI-native SaaS platforms. Expert in RAG pipelines, LangChain, and scaling engineering teams.',
+      'CTO & AI Architect with 9+ years building AI-native SaaS platforms. Expert in RAG pipelines, LangChain, and scaling engineering teams.',
     url: SITE_URL,
   },
 }

@@ -30,7 +30,7 @@ const PROJECTS: Project[] = [
     slug: 'the-branding-club',
     company: 'The Branding Club',
     role: 'Lead AI Engineer & Founding Architect',
-    dateRange: 'May 2024 – Present',
+    dateRange: 'May 2024 – Jun 2026',
     tagline:
       'AI-powered brand intelligence platform — GPT-4 RAG pipelines, multi-tenant SaaS, real-time brand insights served at sub-second latency.',
     tech: ['GPT-4', 'RAG', 'LangChain', 'Next.js', 'Django', 'Pinecone', 'AWS'],

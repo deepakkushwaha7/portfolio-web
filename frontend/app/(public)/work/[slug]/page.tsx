@@ -29,7 +29,7 @@ const CASE_STUDIES: Record<string, CaseStudy> = {
     slug: 'the-branding-club',
     company: 'The Branding Club',
     role: 'Head of Engineering & AI Architect',
-    dateRange: 'May 2024 – Present',
+    dateRange: 'May 2024 – Jun 2026',
     category: 'AI Product',
     tagline: 'Brandhub — microservices SaaS processing 100K read/write ops/second, 100K SKUs per batch, RAG pipelines cutting content effort by 70%.',
     overview:

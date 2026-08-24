@@ -4,9 +4,9 @@ import AboutHero from '@/components/sections/about/AboutHero'
 import { SITE_URL } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'About Deepak Kushwaha | AI Architect, CTO & Engineering Leader',
+  title: 'About Deepak Kushwaha | CTO & AI Architect',
   description:
-    'Deepak Kushwaha — AI Architect, Co-founder & CTO with 9+ years at Tally Solutions, Turno, Ceodekho, and The Branding Club. Expert in RAG pipelines, LangChain, system design, and engineering leadership. Based in Bangalore, India.',
+    'Deepak Kushwaha — CTO at Metis Labs and AI Architect with 9+ years at Tally Solutions, Turno, Ceodekho, and The Branding Club. Expert in RAG pipelines, LangChain, system design, and engineering leadership. Based in Bangalore, India.',
   keywords: [
     'Deepak Kushwaha',
     'Deepak Kushwaha about',
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: `${SITE_URL}/about` },
   openGraph: {
-    title: 'About Deepak Kushwaha | AI Architect, CTO & Engineering Leader',
+    title: 'About Deepak Kushwaha | CTO & AI Architect',
     description:
-      'AI Architect & CTO with 9+ years building AI-native SaaS. Bangalore-based. Worked at Tally, Turno, Ceodekho, and The Branding Club.',
+      'CTO at Metis Labs and AI Architect with 9+ years building AI-native SaaS. Bangalore-based. Previously Tally, Turno, Ceodekho, and The Branding Club.',
     url: `${SITE_URL}/about`,
   },
 }
@@ -40,9 +40,20 @@ type TimelineEntry = {
 
 const TIMELINE: TimelineEntry[] = [
   {
+    company: 'Metis Labs',
+    role: 'Chief Technology Officer',
+    dateRange: 'Jul 2026 – Present',
+    location: 'Europe (Remote)',
+    bullets: [
+      'Own technology strategy and engineering execution end-to-end — architecture, platform roadmap, technical hiring, and delivery.',
+      'Lead the design of AI-native product infrastructure: LLM orchestration, RAG pipelines, evaluation harnesses, and observability.',
+      'Build and scale the engineering organisation, setting technical standards, review culture, and delivery process.',
+    ],
+  },
+  {
     company: 'The Branding Club',
     role: 'Head of Engineering & AI Architect',
-    dateRange: 'May 2024 – Present',
+    dateRange: 'May 2024 – Jun 2026',
     location: 'Netherlands, Europe (Remote)',
     bullets: [
       'Established and scaled a 20-member cross-functional team (Engineering, QA, DevOps) from zero, driving hiring pipelines, engineering culture, and technical standards.',

@@ -55,8 +55,8 @@ export function personSchema() {
     name: 'Deepak Kushwaha',
     url: SITE_URL,
     image: `${SITE_URL}/opengraph-image`,
-    jobTitle: 'AI Architect & Engineering Leader',
-    worksFor: { '@type': 'Organization', name: 'The Branding Club' },
+    jobTitle: 'CTO & AI Architect',
+    worksFor: { '@type': 'Organization', name: 'Metis Labs', url: 'https://metislabs.eu' },
     address: { '@type': 'PostalAddress', addressLocality: 'Bangalore', addressCountry: 'IN' },
     email: 'kdeepakkushwaha@gmail.com',
     sameAs: [

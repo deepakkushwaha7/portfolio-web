@@ -6,7 +6,7 @@ export const runtime = 'edge'
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)
   const title = searchParams.get('title') ?? 'Deepak Kushwaha'
-  const subtitle = searchParams.get('subtitle') ?? 'AI Architect & Engineering Leader'
+  const subtitle = searchParams.get('subtitle') ?? 'CTO & AI Architect'
 
   return new ImageResponse(
     (

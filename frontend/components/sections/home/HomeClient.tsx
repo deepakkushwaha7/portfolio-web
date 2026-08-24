@@ -54,7 +54,7 @@ const FEATURED_PROJECTS = [
     tagline:
       'AI-powered brand intelligence platform — GPT-4 integrations, RAG pipelines, and multi-tenant SaaS architecture.',
     tech: ['GPT-4', 'RAG', 'Next.js', 'Django', 'Pinecone', 'AWS'],
-    dateRange: 'May 2024 – Present',
+    dateRange: 'May 2024 – Jun 2026',
   },
   {
     slug: 'ceodekho',
@@ -214,7 +214,7 @@ export default function HomeClient() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-mono text-xs tracking-[0.3em] text-[#f5f5f0]/50 uppercase mb-8"
           >
-            AI Architect &amp; Engineering Leader
+            CTO &amp; AI Architect
           </motion.p>
 
           {/* Main heading — single h1 wrapping both words */}

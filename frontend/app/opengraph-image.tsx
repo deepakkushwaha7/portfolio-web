@@ -4,7 +4,7 @@ import path from 'path'
 
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
-export const alt = 'Deepak Kushwaha — AI Architect & Engineering Leader'
+export const alt = 'Deepak Kushwaha — CTO & AI Architect'
 
 export default function OgImage() {
   const fontData = readFileSync(
@@ -75,7 +75,7 @@ export default function OgImage() {
                 fontWeight: 400,
               }}
             >
-              AI Architect &amp; Engineering Leader
+              CTO &amp; AI Architect
             </div>
 
             {/* Name */}

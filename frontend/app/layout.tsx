@@ -36,9 +36,14 @@ const siteSchema = {
       familyName: 'Kushwaha',
       url: SITE_URL,
       image: `${SITE_URL}/opengraph-image`,
-      jobTitle: 'AI Architect & Engineering Leader',
+      jobTitle: 'CTO & AI Architect',
+      worksFor: {
+        '@type': 'Organization',
+        name: 'Metis Labs',
+        url: 'https://metislabs.eu',
+      },
       description:
-        'Deepak Kushwaha is an AI Architect and Engineering Leader with 9+ years building production AI systems, RAG pipelines, LangChain agents, and SaaS platforms at scale. Co-founder, CTO, and Head of Engineering based in Bangalore, India.',
+        'Deepak Kushwaha is CTO at Metis Labs and an AI Architect with 9+ years building production AI systems, RAG pipelines, LangChain agents, and SaaS platforms at scale. Previously Head of Engineering at The Branding Club and Co-founder & CTO at Ceodekho. Based in Bangalore, India.',
       email: 'kdeepakkushwaha@gmail.com',
       knowsAbout: [
         'Artificial Intelligence',
@@ -79,7 +84,7 @@ const siteSchema = {
       name: 'Deepak Kushwaha',
       url: SITE_URL,
       description:
-        'Deepak Kushwaha — AI Architect & Engineering Leader. RAG pipelines, LangChain, system design, mock interview coaching, and engineering consulting.',
+        'Deepak Kushwaha — CTO & AI Architect. RAG pipelines, LangChain, system design, mock interview coaching, and engineering consulting.',
       author: { '@id': `${SITE_URL}/#person` },
       potentialAction: {
         '@type': 'SearchAction',
@@ -91,7 +96,7 @@ const siteSchema = {
       '@type': 'ProfilePage',
       '@id': `${SITE_URL}/#profilepage`,
       url: SITE_URL,
-      name: 'Deepak Kushwaha — AI Architect & Engineering Leader',
+      name: 'Deepak Kushwaha — CTO & AI Architect',
       isPartOf: { '@id': `${SITE_URL}/#website` },
       about: { '@id': `${SITE_URL}/#person` },
       mainEntity: { '@id': `${SITE_URL}/#person` },
@@ -109,12 +114,15 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     template: '%s | Deepak Kushwaha',
-    default: 'Deepak Kushwaha | AI Architect & Engineering Leader',
+    default: 'Deepak Kushwaha | CTO & AI Architect',
   },
   description:
-    'AI Architect & Engineering Leader with 9+ years building SaaS platforms. Expert in RAG pipelines, LangChain, GPT-4 integrations, and scaling engineering teams. Based in Bangalore, India.',
+    'CTO & AI Architect with 9+ years building SaaS platforms. Expert in RAG pipelines, LangChain, GPT-4 integrations, and scaling engineering teams. Based in Bangalore, India.',
   keywords: [
     'Deepak Kushwaha',
+    'Deepak Kushwaha CTO',
+    'Deepak Kushwaha Metis Labs',
+    'Metis Labs CTO',
     'Deepak Kushwaha AI architect',
     'Deepak Kushwaha engineer',
     'AI Architect India',
@@ -138,15 +146,15 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     url: SITE_URL,
     siteName: 'Deepak Kushwaha',
-    title: 'Deepak Kushwaha | AI Architect & Engineering Leader',
+    title: 'Deepak Kushwaha | CTO & AI Architect',
     description:
-      'AI Architect & Engineering Leader with 9+ years building SaaS platforms. Expert in RAG pipelines, LangChain, GPT-4 integrations.',
+      'CTO & AI Architect with 9+ years building SaaS platforms. Expert in RAG pipelines, LangChain, GPT-4 integrations.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Deepak Kushwaha | AI Architect & Engineering Leader',
+    title: 'Deepak Kushwaha | CTO & AI Architect',
     description:
-      'AI Architect & Engineering Leader with 9+ years building SaaS platforms.',
+      'CTO & AI Architect with 9+ years building SaaS platforms.',
     creator: '@deepakkushwaha',
   },
   icons: {
